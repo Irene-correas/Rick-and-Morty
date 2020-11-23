@@ -1,7 +1,16 @@
-import "../stylesheets/App.css";
+import React from "react";
+import { Route, Switch } from "react-router-dom";
+import Landing from "./Landing";
+import Main from "./Main";
 
-function App() {
-  return <div className="App">Learn React</div>;
-}
-
+const App = () => {
+  return (
+    <>
+      <Switch>
+        <Route exact path="/" component={Landing} />
+        <Route exact path="/Main" component={Main} />
+      </Switch>
+    </>
+  );
+};
 export default App;

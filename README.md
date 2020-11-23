@@ -1,7 +1,7 @@
 ## Rick and Morty
 
 Página web con un listado de personajes de Rick and Morty,
-que podemos filtrar por el nombre del personaje, en la que apaerece una ventana modal con un personaje y sus especificaciones.
+que podemos filtrar por el nombre del personaje, en la que aparece una ventana modal con un personaje y sus especificaciones.
 
 ### Tecnologías utlizadas
 
