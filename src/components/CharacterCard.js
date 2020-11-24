@@ -4,7 +4,11 @@ import "../stylesheets/CharacterCard.css";
 const CharacterCard = (props) => {
   return (
     <div className="card">
-      <img className="card__img" src={props.element.img} />
+      <img
+        className="card__img"
+        src={props.element.img}
+        alt={props.element.name}
+      />
       <h4 className="card__tittle">{props.element.name}</h4>
       <p className="card_description">{props.element.species}</p>
     </div>
