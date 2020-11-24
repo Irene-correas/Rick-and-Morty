@@ -13,7 +13,10 @@ const CharacterCard = (props) => {
       />
       <h4 className="card__tittle">{props.element.name}</h4>
       <p className="card__description">{props.element.species}</p>
-      <Link className="card__link" to={`/CharacterDetail/${props.element.id}`}>
+      <Link
+        className="card__link"
+        to={`/Main/CharacterDetail/${props.element.id}`}
+      >
         + Info
       </Link>
     </div>

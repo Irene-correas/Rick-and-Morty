@@ -28,25 +28,43 @@ const Main = () => {
   });
   console.log(filteredCharacter);
 
-  const renderDetail = (props) => {};
+  const renderDetail = (props) => {
+    const CharacterId = parseInt(props.match.params.id);
+    const foundCharacter = character.find((character) => {
+      return CharacterId === character.id;
+    });
+    if (foundCharacter !== undefined) {
+      console.log("difernte");
+      return (
+        <CharacterDetail
+          info={foundCharacter}
+          // name={foundCharacter.name}
+          // status={foundCharacter.status}
+          // species={foundCharacter.species}
+          // gender={foundCharacter.gender}
+          // origin={foundCharacter.origin}
+          // location={foundCharacter.location}
+          // img={foundCharacter.image}
+        />
+      );
+    } else {
+      return false;
+    }
+  };
 
   return (
     <>
       <Header />
       <Filter handleChange={handleChange} />
       <Switch>
-        <Route
-          exact
-          path="/Main"
-          CharactersList={filteredCharacter}
-          handleChange={handleChange}
-        />
+        <Route exact path="/Main">
+          <CharacterList
+            charactersList={filteredCharacter}
+            handleChange={handleChange}
+          />
+        </Route>
+        <Route path="/Main/CharacterDetail/:id" component={renderDetail} />
       </Switch>
-      <CharacterList
-        charactersList={filteredCharacter}
-        component={renderDetail}
-      />
-      <CharacterDetail />
     </>
   );
 };
