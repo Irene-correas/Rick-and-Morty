@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import CharacterList from "./CharacterList";
 import Header from "./Header";
 import Filter from "./Filter";
+import { Route, Switch } from "react-router-dom";
+import CharacterDetail from "./CharacterDetail";
 
 const Main = () => {
   const [character, setCharacter] = useState([]);
@@ -26,11 +28,25 @@ const Main = () => {
   });
   console.log(filteredCharacter);
 
+  const renderDetail = (props) => {};
+
   return (
     <>
       <Header />
       <Filter handleChange={handleChange} />
-      <CharacterList charactersList={filteredCharacter} />
+      <Switch>
+        <Route
+          exact
+          path="/Main"
+          CharactersList={filteredCharacter}
+          handleChange={handleChange}
+        />
+      </Switch>
+      <CharacterList
+        charactersList={filteredCharacter}
+        component={renderDetail}
+      />
+      <CharacterDetail />
     </>
   );
 };
