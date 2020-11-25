@@ -1,14 +1,8 @@
 import React from "react";
 import CharacterCard from "./CharacterCard";
 import "../stylesheets/CharacterList.css";
-// import Filter from "./Filter";
-// import FilterName from "./FilterName";
 
 const CharacterList = (props) => {
-  // const handlerChange = (event) => {
-  //   props.handlerChange(event.target.value);
-  // };
-  // console.log(handlerChange);
   return (
     <div>
       <ul className="list__container">
@@ -19,7 +13,6 @@ const CharacterList = (props) => {
             </li>
           );
         })}
-        ;
       </ul>
     </div>
   );

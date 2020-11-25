@@ -1,0 +1,10 @@
+.form__input {
+  font-size: 50px;
+  font-family: "Mountains of Christmas", cursive;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  border-radius: 15px;
+  border: 5px solid #9aff62;
+  background-color: rgb(206, 241, 228);
+}

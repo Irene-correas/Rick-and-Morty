@@ -13,6 +13,7 @@ const Api = () => {
           gender: character.gender,
           origin: character.origin,
           location: character.location,
+          episode: character.episode,
           img: character.image,
         };
       });

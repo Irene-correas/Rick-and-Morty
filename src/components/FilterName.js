@@ -1,4 +1,5 @@
 import React from "react";
+import "../stylesheets/FilterName.css";
 
 const FilterName = (props) => {
   const handleChange = (event) => {
@@ -7,14 +8,12 @@ const FilterName = (props) => {
   };
   return (
     <div>
-      <label className="form__label display block" htmlFor="name">
-        Nombre:
-      </label>
       <input
         className="form__input"
         type="text"
         name="name"
         id="name"
+        placeholder="Nombre"
         onChange={handleChange}
       />
     </div>

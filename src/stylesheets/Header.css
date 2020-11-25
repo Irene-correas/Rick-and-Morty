@@ -1,5 +1,12 @@
-/* .header {
-  background-image: url("../Images/nombre.jpg");
-  height: 50px;
-  width: 100vh;
-} */
+.background__header {
+  display: flex;
+  justify-content: center;
+}
+.header {
+  color: #9aff62;
+  font-size: 80px;
+  text-align: center;
+  font-family: "Mountains of Christmas", cursive;
+  text-decoration: none;
+  border: none;
+}

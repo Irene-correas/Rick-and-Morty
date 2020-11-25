@@ -1,5 +1,6 @@
 import React from "react";
 import FilterName from "./FilterName";
+import "../stylesheets/Filter.css";
 
 const Filter = (props) => {
   const handleSubmit = (ev) => {
@@ -8,7 +9,7 @@ const Filter = (props) => {
 
   return (
     <section>
-      <form onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
         <FilterName handleFilter={props.handleChange} />
       </form>
     </section>
