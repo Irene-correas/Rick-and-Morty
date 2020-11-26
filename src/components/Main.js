@@ -9,6 +9,7 @@ import Header from "./Header";
 const Main = () => {
   const [character, setCharacter] = useState([]);
   const [filterName, setFilterName] = useState("");
+  const [filterSpecies, setFilterSpecies] = useState("");
 
   // API
   useEffect(() => {
@@ -19,11 +20,26 @@ const Main = () => {
   const handleChange = (filterName) => {
     setFilterName(filterName);
   };
+  // funcion filter species
+  const handleChangeSpecies = (filterSpecies) => {
+    setFilterSpecies(filterSpecies);
+  };
 
   // filtrar por nombre
-  const filteredCharacter = character.filter((eachCharacter) => {
-    return eachCharacter.name.toLowerCase().includes(filterName.toLowerCase());
-  });
+  const filteredCharacter = character
+    .filter((eachCharacter) => {
+      return eachCharacter.name
+        .toLowerCase()
+        .includes(filterName.toLowerCase());
+    })
+    // filtrar por especies
+    .filter((eachCharacter) => {
+      if (filterSpecies === "all") {
+        return true;
+      } else {
+        return eachCharacter.species === filterSpecies;
+      }
+    });
 
   // Pintar character detail
   const renderDetail = (props) => {
@@ -43,7 +59,11 @@ const Main = () => {
       <Switch>
         <Route exact path="/Main">
           <Header />
-          <Filter handleChange={handleChange} />
+          <Filter
+            handleChange={handleChange}
+            handleChangeSpecies={handleChangeSpecies}
+            charactersList={filteredCharacter}
+          />
           <CharacterList
             charactersList={filteredCharacter}
             handleChange={handleChange}
